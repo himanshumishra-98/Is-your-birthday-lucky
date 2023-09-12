@@ -5,9 +5,9 @@ const outputResult = document.querySelector("#output-result");
 
 const calculateSum = (bdate) => {
     let sum = 0;
-    let bdate = bdate.replaceAll("-","");
-    for(let num of bdate){
-        sum += Number(num);
+    let Date = bdate.replaceAll("-","");
+    for(let i=0; i<Date.length; i++){
+        sum += Number(Date[i]);
     }
     return sum;
 };
@@ -29,8 +29,7 @@ chkBtn.addEventListener("click",() => {
     if(bdate && noToCheck){
         const bdaySum = calculateSum(bdate);
         checkIsBdayLucky(bdaySum,noToCheck);
-    }else {
-        showMessage("Please enter both the fields");
+    }else{
+        showMessage("Please enter both the fields.")
     }
-
 });
